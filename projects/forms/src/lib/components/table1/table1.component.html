@@ -1,0 +1,81 @@
+<div class="mat-elevation-z8">
+<div *ngIf="formTable.formData.length==0">
+No records found
+</div>
+<div *ngIf="formTable.formData.length>0">
+
+
+<table
+mat-table [dataSource]="formTable.formData">
+<td>
+    <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef> First Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+    </ng-container>
+</td>
+<td>
+    <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef> Last Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+    </ng-container>
+</td>
+<td>
+<ng-container matColumnDef="country">
+    <th mat-header-cell *matHeaderCellDef> Country </th>
+    <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+</ng-container>
+</td>
+<td>
+    <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef> Selected Country </th>
+        <td mat-cell *matCellDef="let element"> {{element.select}} </td>
+    </ng-container>
+</td>
+<td>
+    <ng-container matColumnDef="info">
+        <th mat-header-cell *matHeaderCellDef> Information about country </th>
+        <td mat-cell *matCellDef="let element"> {{element.info}} </td>
+    </ng-container>
+</td>
+<td>
+    <ng-container matColumnDef="hobby">
+        <th mat-header-cell *matHeaderCellDef> Hobbies </th>
+        <td mat-cell *matCellDef="let element"> {{element.hobby}} </td>
+    </ng-container>
+</td>
+<td>
+    <ng-container matColumnDef="comment">
+        <th mat-header-cell *matHeaderCellDef> Comments </th>
+        <td mat-cell *matCellDef="let element"> {{element.comment}} </td>
+    </ng-container>
+</td>
+    <!-- <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Country</th>
+            <th>Selected Country</th>
+            <th>Country Info</th>
+            <th>Favorite Hobby</th>
+            <th>Comment</th>
+            
+
+                   
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of formTable.formData">
+            <td>{{data.firstName}}</td>
+            <td>{{data.lastName}}</td>
+            <td>{{data.country}}</td>
+            <td>{{data.select}}</td>
+            <td>{{data.info}}</td>
+            <td>{{data.hobby}}</td>
+            <td>{{data.comment}}</td>
+        </tr> -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
+</div>
+</div>
+<button (click)="onReturn()" mat-raised-button color="primary">Go Back</button>

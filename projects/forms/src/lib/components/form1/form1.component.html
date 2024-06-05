@@ -1,0 +1,65 @@
+
+<!-- <p>form1 works!</p>
+<!-- <form> -->
+    <!-- <input type="text" [(ngModel)]="firstName" placeholder="Enter your name" />
+    <button (click)="formdetails()">Submit</button>
+    <div>
+        {{showDetails}}
+    </div> -->
+<!-- </form> --> 
+<div class="d-flex justify-content-center ">
+    <form [formGroup]="formInfo">
+        
+
+    
+    <mat-card class="bg-secondary" >
+    <mat-card-content>
+        <mat-form-field>
+            <input matInput placeholder="First Name" formControlName="firstName">
+            <mat-hint>Fill in your first name</mat-hint>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Last Name"formControlName="lastName" >
+            <mat-hint>Fill in your last name</mat-hint>
+        </mat-form-field>
+        <div>
+            <mat-form-field>
+                <mat-label>Country</mat-label>
+                <input matInput formControlName="country">
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Select</mat-label>
+                <mat-select formControlName="select">
+                  <!-- <mat-option value="one">First option</mat-option> -->
+                  <!-- <mat-option value="two">Second option</mat-option> -->
+                  <mat-option *ngFor="let name of dropDownList" [value]="name.value">{{name.name}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field>
+                
+                <mat-label>Country info</mat-label>
+                <textarea matInput formControlName="info"></textarea>
+              </mat-form-field>
+        </div>
+        
+
+        <div>
+            <mat-form-field class="example-full-width">
+              <mat-label>Favorite hobbies</mat-label>
+              <input matInput placeholder="" formControlName="hobby" >
+            </mat-form-field>
+          
+            <mat-form-field class="example-full-width">
+              <mat-label>Leave a comment</mat-label>
+              <textarea matInput placeholder="Ex. It makes me feel..." formControlName="comment"></textarea>
+            </mat-form-field>
+        </div>
+          
+          <div class="d-flex justify-content-center">
+          <button mat-raised-button color="primary" class="mr-3" (click)="onSubmit()">SUBMIT</button>
+          <button mat-raised-button color="primary" (click)="onReturn()">Go Back</button>
+          </div>
+    </mat-card-content>
+</mat-card>
+</form>
+</div>
