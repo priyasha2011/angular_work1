@@ -96,3 +96,13 @@ example
   }
 
 and call this function in ngOnint to load that function in page load only
+
+
+{
+'imageID': file data,
+'campaignID':1, // hardcode
+'imageName': file_name,
+'imageURL': file_name,
+'NoOfItem':1,
+'ItemName':selected item value
+}
