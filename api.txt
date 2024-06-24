@@ -106,3 +106,8 @@ and call this function in ngOnint to load that function in page load only
 'NoOfItem':1,
 'ItemName':selected item value
 }
+
+
+@jds:registry=http://10.26.61.34:8081/repository/npm-group/
+//10.26.61.34:8081/repository/npm-group/:_authToken=NpmToken.27493d2d-feac-38ac-ad54-a107f5b818e0
+registry=https://registry.npmjs.org/
